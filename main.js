@@ -15,6 +15,15 @@ function handleMouseLeave(){
     title.innerText ="Mouse is gone!";
 }
 
-title.addEventListener("click", handleTitleClick);
+//Event를 Listen하는 2가지 방법
+title.onclick = handleTitleClick;
 title.addEventListener("mouseenter",handleMouseEnter);
 title.addEventListener("mouseleave", handleMouseLeave);
+
+
+//window Event
+function handleWindowResize(){
+    document.body.style.backgroundColor="tomato";
+}
+
+window.addEventListener("resize", handleWindowResize);
