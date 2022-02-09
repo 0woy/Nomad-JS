@@ -1,13 +1,16 @@
 'use strict';
 
 // HTML에서 element 끌어오기
+const loginForm = document.querySelector("#login-form")
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
 // userName check
-function logInBtnClicked(){
-    const userName = loginInput.value;
-    console.log(userName);
+function onLoginSubmit(event){
+    // preventDefault: evnet의 기본행동 방지
+    event.preventDefault();
+    console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click",logInBtnClicked);
+// submit event -> enter, button
+loginForm.addEventListener("submit", onLoginSubmit);
+
