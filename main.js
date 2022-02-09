@@ -1,14 +1,18 @@
 'use strict';
 
-const h1 = document.querySelector(".hello h1");
+// HTML에서 element 끌어오기
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
 
-
-//toggle: add and remove 
-// Not repeat string, we can use string -> cicked.
-function handleTitleClick(){
-    h1.classList.toggle("clicked");
+// userName check
+function logInBtnClicked(){
+    const userName = loginInput.value;
+    if(userName=== ""){
+        alert("Please write your name");
+    }
+    else if(userName.length > 15){
+        alert("your name is too long");
+    }
 }
- 
-h1.addEventListener("click", handleTitleClick);
 
-
+loginButton.addEventListener("click",logInBtnClicked);
